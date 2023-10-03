@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="HACZ"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.Velveta.NoActionBar"
+        tools:ignore="AllowBackup,UnusedAttribute"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="cz.aurinet.hacz.WebActivity"
+            android:theme="@style/Theme.Velveta.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="cz.aurinet.hacz.ProductInfoMain"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/Theme.Velveta.NoActionBar"/>
+        <activity
+            android:name="cz.aurinet.hacz.MenuActivity"
+            android:exported="true"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cz.aurinet.odvadeni_cnc.ui.OdvadeniPrikazActivity"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            />
+        <activity
+            android:name="cz.aurinet.odvadeni_cnc.ui.StockMaterialActivity"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            />
+        <activity
+            android:name="cz.aurinet.tisk_kodu_cnc.ui.TiskPrikazActivity"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            />
+        <activity
+            android:name="cz.aurinet.tisk_kodu_cnc.ui.CodePrintActivity"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            />
+        <activity
+            android:name="cz.aurinet.processmaterial_dim.ui.ProcessMaterialActivity"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            />
+        <activity
+            android:name="cz.aurinet.processmaterial_dim.ui.ProcessMaterialSwitchActivity"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+      <!--  <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider> -->
+    </application>
+
+</manifest>
